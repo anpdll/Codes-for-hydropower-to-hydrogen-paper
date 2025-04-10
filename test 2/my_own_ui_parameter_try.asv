@@ -1,0 +1,4 @@
+A46 = readmatrix("46 degree celsius ui..csv");
+A72 = readmatrix("72 degree celsius ui..csv");
+
+f_A46 = A46(A46(:,2)>=(1.21*75))

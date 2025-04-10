@@ -1,0 +1,16 @@
+dr_base = 0.00525;
+dr = [0.8.*dr_base dr_base 1.2.*dr_base];
+
+surplus_electricity = 5.570638473620999e+09;
+operating_hrs = 4380; %hrs
+electrolyzer_size = surplus_electricity./operating_hrs;
+lcoe = 0.051; % per KWh
+r = 0.08;
+tr = 0.2;
+N = 20;
+sp_h2 = 7.5;    % H2 selling price
+stack_energy_consumption = 61.43;
+year = 2025;
+
+lcoh = lcoh_calculation(operating_hrs,surplus_electricity,lcoe,r,tr,dr,N,sp_h2,stack_energy_consumption,year)
+save('degradation_rate_lcoh_sensi.mat',"lcoh");
